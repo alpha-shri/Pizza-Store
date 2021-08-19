@@ -1,0 +1,26 @@
+.logoPNG {
+  height: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-class {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ul-class {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartStyle {
+  display: flex;
+  background: #f59e0d;
+  padding: 6px 12px;
+  border-radius: 50px;
+}
