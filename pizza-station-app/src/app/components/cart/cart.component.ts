@@ -8,16 +8,21 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  public cartItems: any;
+  public cartItems: any[] = [];
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cartService
-        .cartBehaviour.subscribe( data => {
+        .getProducts().subscribe( data => {
           this.cartItems = data;
-          console.table(this.cartItems);
+          // console.table(this.cartItems);
         });
+  }
+
+  public emptyCart(){
+    this.cartService.emptyCart();
+
   }
 
 }

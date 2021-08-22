@@ -1,1 +1,52 @@
-<p>cart works!</p>
+<div class="container card shadow rounded" *ngIf="cartItems.length != 0">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Size</td>
+                <td>Price</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let item of cartItems, let i = index">
+                <td style="width: 10%;">{{ i+1 }}</td>
+                <td style="width: 15%">{{ item.name }}</td>
+                <td style="width: 15%">{{ item.size }}</td>
+                <td style="width: 15%">{{ item.price }}</td>
+                <td style="width: 15%">
+                    <button class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td>
+                    <button class="btn btn-success">Checkout Now</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" routerLink="/products">Shop More Pizza</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="emptyCart()">Empty Cart</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-container *ngIf="cartItems.length == 0">
+    <div class="container">
+        <div class="card">
+            <h3 class="card-title font-bold">My Cart</h3>
+        </div>
+        <div class="center">
+            <img src="assets/images/dominos_checkout.jpeg" alt="">
+            <h4>Your Cart is empty !!</h4>
+            <h6>Add item to it now</h6>
+            <button class="btn btn-primary mb-10" routerLink="/products">Shop Now</button>
+        </div>
+    </div>
+</ng-container>

@@ -30,7 +30,7 @@ export class ProductsComponent implements OnInit {
   }
 
   public addToCart(product: Product){
-      console.table(product);
+      // console.table(product);
       this.cartService.addToCart(product);
 
   }

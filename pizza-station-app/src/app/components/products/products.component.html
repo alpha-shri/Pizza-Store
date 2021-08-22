@@ -1,16 +1,17 @@
 <div class="container mx-auto pb-24">
     <h1 class="text-lg font-bold my-8">Products</h1>
-    <div class="grid grid-cols-5 my-8 gap-24" >
-        <div *ngFor="let product of products">
+    <div class="grid grid-cols-4 my-8 gap-16">
+        <div class="card shadow rounded px-4 py-4" *ngFor="let product of products">
             <a [routerLink]="['/details/'+ product.id]" routerLinkActive="router-link-active">
-                <img src="assets/images/pizza.jpg" alt="pepperoni" />
+                <img class="rounded" src="assets/images/pizza.jpg" alt="pepperoni" />
             </a>
             <div class="text-center">
                 <h2 class="text-lg font-bold py-2">{{ product.name }}</h2>
                 <span class="bg-gray-200 py-1 rounded-full text-sm px-4">{{ product.size }}</span>
                 <div class="flex items-center justify-between mt-4">
-                    <span>{{'₹ '+ product.price }}</span>
-                    <button (click)="addToCart( product )" class="py-1 px-4 bg-yellow-500 rounded-full font-bold">ADD</button>
+                    <strong class="text-lg">{{'₹ '+ product.price }}</strong>
+                    <button (click)="addToCart( product )"
+                        class="py-1 px-4 bg-yellow-500 rounded-full font-bold">ADD</button>
                 </div>
             </div>
 
