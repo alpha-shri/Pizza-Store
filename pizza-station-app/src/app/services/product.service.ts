@@ -8,7 +8,9 @@ import { Product } from '../models/Product';
 })
 export class ProductService {
 
-  private url_fetchAll = 'http://localhost:5000/pizza-service/fetchall';
+  private BASE_URL = 'http://localhost:5000';
+
+  private url_fetchAll = this.BASE_URL+'/pizza-service/fetchall';
 
   constructor(private http: HttpClient) { }
 
