@@ -8,13 +8,15 @@ import { Product } from '../models/Product';
 })
 export class ProductService {
 
-  private BASE_URL = 'http://localhost:5000';
-
-  private url_fetchAll = this.BASE_URL+'/pizza-service/fetchall';
+  private BASE_URL = 'http://localhost:5000/pizza-service';
 
   constructor(private http: HttpClient) { }
 
   fetchAllPizzaService(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url_fetchAll);
+    return this.http.get<Product[]>(this.BASE_URL + '/fetchall');
+  }
+
+  fetchByIdService(id: Number): Observable<Product>{
+    return this.http.get<Product>(this.BASE_URL+ '/find/' +id);
   }
 }

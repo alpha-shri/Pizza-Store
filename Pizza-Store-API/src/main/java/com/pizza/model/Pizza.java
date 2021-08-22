@@ -3,6 +3,7 @@ package com.pizza.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.NotBlank;
@@ -22,4 +23,7 @@ public class Pizza {
     private String size;
 
     private int price;
+
+//    private PizzaImage pizzaImage;
+
 }
