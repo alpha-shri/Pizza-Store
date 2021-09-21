@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-PizzaStoreApiApplication<Pizza-Store-API>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.pizza.PizzaStoreApiApplication",
+      "projectName": "Pizza-Store-API",
+      "args": ""
+    }
+  ]
+}

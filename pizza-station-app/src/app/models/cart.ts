@@ -1,10 +1,7 @@
+import { Product } from "./Product";
+
 export interface Cart{
-    items ?: items;
-    totalItems ?: number;
+    product: Product,
+    quantity? : number
 
-}
-
-export interface items{
-    id ?: number;
-    qty ?: number;
 }
